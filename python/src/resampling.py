@@ -1,3 +1,21 @@
+"""
+Cell Resampling Algorithm
+-------------------------
+
+Implements the negative-weight mitigation strategy described in
+arXiv:2109.07851 using nearest-neighbour phase-space cells.
+
+Steps:
+1. Select negative-weight seed
+2. Grow cell using nearest neighbours in (pt, y) space
+3. Stop when total weight >= 0
+4. Redistribute weights within the cell
+
+Distance metric:
+d = sqrt((pt_i - pt_j)^2 + 100*(y_i - y_j)^2)
+
+Implemented by scaling y -> 10*y before KDTree construction.
+"""
 import numpy as np
 from scipy.spatial import KDTree
 

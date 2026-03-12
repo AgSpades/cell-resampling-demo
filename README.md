@@ -119,5 +119,10 @@ The resampling procedure preserves two important physical properties:
    **(pt, y)** space, the observable distributions are preserved within
    detector resolution.
 
+## Results
+
+After applying cell resampling, all negative weights are eliminated while
+preserving the original physical distributions.
+
 
 ![Resampled_Distribution](python/results/resampled_distributions.png)
